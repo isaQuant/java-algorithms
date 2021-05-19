@@ -1,4 +1,4 @@
-public class mergesort {
+public class Mergesort {
 
     /**
      * Sorts the given array via the mergesort algorithm.

@@ -32,10 +32,9 @@ public class ExponentialSearch {
             i *= 2;
         }
 
-		/* call the binary search method on the search range
-		The element is searched between i/2 and min(i, data.length-1). The 'min(i, data.length-1)' is needed to ensure
-		that i is not out of the array bounds.
-		 */
+	/* call the binary search method on the search range
+	The element is searched between i/2 and min(i, data.length-1). The 'min(i, data.length-1)' is needed to ensure
+	that i is not out of the array bounds. */
         return binarySearch(data, element, i/2, Math.min(i, data.length-1));
     }
 
@@ -53,13 +52,13 @@ public class ExponentialSearch {
     private int binarySearch(int[] data, int element, int left, int right) {
 
         if(left <= right) {
-			/* calculate the middle of the left and right boundary
+            /* calculate the middle of the left and right boundary
 
-			! we do not calculate the middle by 'middle = (left + right)/2' because this can lead to overflow:
-			for example: if the sum of left and right is greater than the maximum positive int value, the sum overflows
-			to a negative value and the value stays negative when divided by 2, which would throw an ArrayOutOfBoundsException.
-			Therefore the formula left+((right-left)/2) is used for calculating the middle
-			 */
+	    ! we do not calculate the middle by 'middle = (left + right)/2' because this can lead to overflow:
+	    for example: if the sum of left and right is greater than the maximum positive int value, the sum overflows
+	    to a negative value and the value stays negative when divided by 2, which would throw an ArrayOutOfBoundsException.
+	    Therefore the formula left+((right-left)/2) is used for calculating the middle */
+		
             int middle = left + ((right - left) / 2);
 
             // check if element is found at calculated middle
